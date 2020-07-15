@@ -12,7 +12,8 @@ SudokuState bruteForceAlgorithm(SudokuState currentState, const int spot[3]);
 
 int main(int argc, char const *argv[])
 {
-    // char template[9][9] = {
+    //Empty template to use when creating a new Sudoku problem to be solved
+    // char initialState[9][9] = {
     //     {'-', '-', '-', '-', '-', '-', '-', '-', '-'},
     //     {'-', '-', '-', '-', '-', '-', '-', '-', '-'},
     //     {'-', '-', '-', '-', '-', '-', '-', '-', '-'},
@@ -45,12 +46,27 @@ int main(int argc, char const *argv[])
 
 void bruteForceSearch(char initstate[9][9])
 {
+    //creates three states from the inital sudoku problem
     SudokuState initialState = SudokuState(initstate);
     SudokuState state = SudokuState(initstate);
     SudokuState solvedState;
 
+    /**
+     * Three different place holders.
+     * spot[0] = current x position
+     * spot[1] = current y position
+     * spot[2] = current x,
+     */
     int spot[3] = {0, 0, 1};
+
+    //Changed is used to see if the value has been changed since the original state
     bool changed = false;
+
+    /**
+     * for loop to find the first location location of -
+     * and sets the x and y location to the location of -
+     * in the 2D array 
+     */
     for (int i = 0; i < 9; i++)
         for (int j = 0; j < 9; j++)
             if (state.state[i][j] == '-' && changed == false)
