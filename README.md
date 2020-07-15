@@ -18,11 +18,11 @@ Right now, the input for the Sudoku Problem to be solved requires hard code.
 (this will be updated in the next iteration)
 
 All you have to do is input the correct characters in the initialState 2D
-array at the top of main. Compile and run.
+array at the top of main, compile and run.
 
-This program also requires c++11 or later.
-Use this command to compile:
+This program also requires c++11 or later.<br>
+Use this command to compile:<br>
 g++ -o main main.cpp SudokuState.cpp -std=c++11
 
-Use this command to run:
+Use this command to run:<br>
 ./main
