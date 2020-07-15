@@ -144,6 +144,7 @@ SudokuState bruteForceAlgorithm(SudokuState currentState, const int spot[3])
         cout << "Top of alogrithm" << endl;
         cout << location[0] << ", " << location[1] << endl;
         cout << state.printColor(pureState) << endl;
+        //Comment this line out for faster speed and to remove delay
         this_thread::sleep_for(chrono::nanoseconds(5000000));
         SudokuState newState;
         if (state.checkSolved() < 90)
