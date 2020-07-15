@@ -1,9 +1,0 @@
-# Ignore Everything
-*
-
-!main.cpp
-!README.md
-!SudokuState.cpp
-!SudokuState.h
-
-
