@@ -59,7 +59,7 @@ void bruteForceSearch(char initstate[9][9])
                 spot[1] = j;
                 changed = true;
             }
-    cout << "Starting location " << spot[0] << ", " << spot[1] << endl;
+
     while (solvedState.checkSolved() != -1)
     {
         char aChar = '0' + spot[2]++;
@@ -74,15 +74,13 @@ void bruteForceSearch(char initstate[9][9])
         if (state.checkSolved() > 90)
             newState = bruteForceAlgorithm(state, spot);
 
-        // cout << newState.print() << endl
-        //      << endl;
-
         if (newState.checkSolved() == -1)
             solvedState = SudokuState(newState.state);
 
         if (spot[2] == 10 && newState.checkSolved() != -1)
         {
-            cout << "Fuck" << endl;
+            cout << "No solution found." << endl;
+            cout << "This is most likely an input issue not and issue with the program." << endl;
             exit(2);
         }
     }
@@ -128,17 +126,15 @@ SudokuState bruteForceAlgorithm(SudokuState currentState, const int spot[3])
             return currentState;
         SudokuState pureState = state;
         state.state[location[0]][location[1]] = aChar;
-        cout << "Top of alogrithm" << endl;
-        cout << location[0] << ", " << location[1] << endl;
-        cout << state.printColor(pureState) << endl;
+
         //Comment this line out for faster speed and to remove delay
         //this_thread::sleep_for(chrono::nanoseconds(5000000));
+
         SudokuState newState;
         if (state.checkSolved() < 90)
         {
             if (state.checkSolved() == -1)
             {
-                cout << "DID IT" << endl;
                 return state;
             }
         }
@@ -149,7 +145,6 @@ SudokuState bruteForceAlgorithm(SudokuState currentState, const int spot[3])
 
         if (newState.checkSolved() == -1)
         {
-            cout << "Solved" << endl;
             solvedState = SudokuState(newState.state);
             return solvedState;
         }
