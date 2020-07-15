@@ -6,5 +6,4 @@
 #but not .h
 !*.h
 # Or directories
-!.gitignore
 !README.md
