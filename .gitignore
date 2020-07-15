@@ -1,11 +1,9 @@
 # Ignore Everything
 *
 
-# But not .cpp
-!*.cpp
-#but not .h
-!*.h
-# Or directories
+!main.cpp
 !README.md
+!SudokuState.cpp
+!SudokuState.h
 
-Tester
+
