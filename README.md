@@ -1,5 +1,7 @@
 # SudokuSolver
 
+SudokuSolver Verizon 1.0
+
 CPP Program that automatically solves any Sudoku Problem in seconds.
 
 This program uses a brute force algorithm to check all possible cases
