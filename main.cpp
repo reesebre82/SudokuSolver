@@ -76,37 +76,39 @@ void bruteForceSearch(char initstate[9][9])
                 changed = true;
             }
 
+    //Begin of brute force. Repeat until solved;
     while (solvedState.checkSolved() != -1)
     {
         char aChar = '0' + spot[2]++;
 
+        //Set the current - to a digit, and print it out
         state.state[spot[0]][spot[1]] = aChar;
         cout << state.print() << endl;
-        cout << state.checkSolved() << endl;
+
+        //if solved, sets solvedState equal to current state
         if (state.checkSolved() == -1)
             solvedState = SudokuState(state.state);
 
         SudokuState newState;
+        //If solved reponse is greater than 90, entry is valid; start algorithm
         if (state.checkSolved() > 90)
             newState = bruteForceAlgorithm(state, spot);
 
+        //Check if newly generated state was a solved state
         if (newState.checkSolved() == -1)
             solvedState = SudokuState(newState.state);
 
+        //Exit statement if no solutions are found
         if (spot[2] == 10 && newState.checkSolved() != -1)
         {
             cout << "No solution found." << endl;
-            cout << "This is most likely an input issue not and issue with the program." << endl;
+            cout << "Double check input and please report input if error exists." << endl;
             exit(2);
         }
     }
 
-    cout << endl
-         << endl
-         << endl;
-    cout << "This is the solved state"
-         << endl
-         << endl;
+    //Generic output when solution is found
+    cout << "\n\n\nThis is the solved state\n\n";
 
     if (solvedState.checkSolved() == -2)
     {

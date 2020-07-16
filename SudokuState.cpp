@@ -2,6 +2,12 @@
 #include "SudokuState.h"
 #include <string>
 
+/**
+ * SudokuState is a constructor that will create a 
+ * sudoku state object and fill the state with a given
+ * 2D array.
+ * Afterwards, it will check if the state is solved.
+ */
 SudokuState::SudokuState(char currentState[9][9])
 {
     for (int i = 0; i < 9; i++)
@@ -9,6 +15,7 @@ SudokuState::SudokuState(char currentState[9][9])
             state[i][j] = currentState[i][j];
     isSolved = isFinalSolution();
 }
+
 SudokuState::SudokuState()
 {
     for (int i = 0; i < 9; i++)
@@ -69,7 +76,7 @@ int SudokuState::isFinalSolution()
     if (checkDash())
         return 99;
 
-    return -1;
+    return -1; //means no errors found thus solved
 }
 
 bool SudokuState::checkDash()

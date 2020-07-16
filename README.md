@@ -2,7 +2,7 @@
 
 SudokuSolver Verizon 0.0.1
 
-CPP Program that automatically solves any Sudoku Problem in seconds.
+C++ Program that automatically solves any Sudoku Problem in seconds.
 
 This program uses a brute force algorithm to check all possible cases
 until a solution is found.
