@@ -1,6 +1,6 @@
-# SudokuSolver
+on# SudokuSolver
 
-SudokuSolver Verizon 0.0.1
+SudokuSolver Version 0.0.1
 
 C++ Program that automatically solves any Sudoku Problem in seconds.
 
